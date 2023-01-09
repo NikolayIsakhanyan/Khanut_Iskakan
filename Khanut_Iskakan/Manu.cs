@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Khanut_Iskakan
 {
-    public class Manu:Person
+    public class Manu:Basa
     { 
         
         public Manu()
         {
-            string a = Xmichq;
-            string b = Qaxcr;
-            string c = Mterq;
+            //string a = Xmichq;
+            //string b = Qaxcr;
+            //string c = Mterq;
             Console.WriteLine("Manu for search`");
-            Console.WriteLine($"1 . {a}");
-            Console.WriteLine($"2 . {b}");
-            Console.WriteLine($"3 . {c}");
+            Console.WriteLine($"1 . Xmichq ");
+            Console.WriteLine($"2 . Qaxcr");
+            Console.WriteLine($"3 . Mterq");
         }
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace Khanut_Iskakan
 {
-    public class Person
+    public class Basa
     {
         public string Xmichq { get; set; }
         public string Qaxcr { get; set; }
