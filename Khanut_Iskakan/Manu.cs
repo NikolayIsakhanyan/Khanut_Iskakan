@@ -12,9 +12,7 @@ namespace Khanut_Iskakan
         
         public Manu()
         {
-            //string a = Xmichq;
-            //string b = Qaxcr;
-            //string c = Mterq;
+           
             Console.WriteLine("Manu for search`");
             Console.WriteLine($"1 . Xmichq ");
             Console.WriteLine($"2 . Qaxcr");

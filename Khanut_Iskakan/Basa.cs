@@ -2,8 +2,8 @@
 {
     public class Basa
     {
-        public string Xmichq { get; set; }
-        public string Qaxcr { get; set; }
-        public string Mterq { get; set; }
+        public string Drink { get; set; }
+        public string Candy { get; set; }
+        public string Food { get; set; }
     }
 }

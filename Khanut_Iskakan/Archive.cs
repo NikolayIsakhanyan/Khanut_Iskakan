@@ -8,10 +8,15 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Khanut_Iskakan
 {
-    public class Arkhiv
+    public class Archive:Basa
     {
 
-
+        public Archive()
+        {
+            Drink = "Vacharq -Ararat `1500amd";
+            Candy = "Vacharq -Nutela `1200amd";
+            Food = "Vacharq -Brindz `500amd";
+        }
          
     }
 }

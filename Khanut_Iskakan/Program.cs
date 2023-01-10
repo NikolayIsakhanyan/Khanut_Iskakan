@@ -1,64 +1,79 @@
 ﻿using Khanut_Iskakan;
+using System;
 using System.ComponentModel;
 using System.Text;
 using System.Text.Json;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-internal class Program
+
+int a = 0;
+Manu menu = new Manu();
+Archive archive = new Archive();
+var text = File.ReadAllText(@"./basa.json");
+var basa = JsonSerializer.Deserialize<Basa>(text);
+for (int i = 0; i < 4; i++)
 {
-
-    private static void Main(string[] args)
+    try
     {
-                Manu menu = new Manu();
-        var text = File.ReadAllText(@"./basa.json");
-        var basa = JsonSerializer.Deserialize<Basa>(text);
-        for (int i = 0; i < 4; i++)
+        string names;
+        Console.WriteLine("Pleas search `");
+        names = Console.ReadLine();
+        switch (names)
         {
-            try
-            {
-                string names;
-                Console.WriteLine("Pleas search `");
-                names = Console.ReadLine();
-                switch (names)
+            case "Xmichq":
+                Console.WriteLine(basa.Drink);
+                Console.WriteLine("Add`\n 1. yes");
+                string xAdd = Console.ReadLine();
+                if (xAdd == "yes")
                 {
-                    case "Xmichq":
-                        Console.WriteLine(basa.Xmichq);
-                        Console.ReadKey();   
-                        break;
-                    case "Qaxcr":
-                        Console.WriteLine(basa.Qaxcr);
-                        break;
-                    case "Mterq":
-                        Console.WriteLine(basa.Mterq);
-                        break;
-                    default:
-                        break;
+                    FileMethod(archive.Drink);
                 }
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                Console.WriteLine(ex.Message);
-
-            }
-            finally
-            {
-                Console.WriteLine("Pordzeq aranc taraskhal !!!");
-            }
-
+                break;
+            case "Qaxcr":
+                Console.WriteLine("Add`\n 1. yes");
+                string x2Add = Console.ReadLine();
+                if (x2Add == "yes")
+                {
+                    FileMethod(archive.Candy);
+                }
+                break;
+            case "Mterq":
+                Console.WriteLine("Add`\n 1. yes");
+                string x3Add = Console.ReadLine();
+                if (x3Add == "yes")
+                {
+                    FileMethod(archive.Food);
+                }
+                break;
+            default:
+                break;
         }
     }
-    static string FileMethod(string a)
+    catch (Exception ex)
     {
-        string path = "note.dat";
-        string text_2 = a;
-        using (FileStream fstream = new FileStream(path, FileMode.Create))
-        {
-            byte[] input = Encoding.Default.GetBytes(text_2);
-            fstream.Write(input, 0, input.Length);
-            Console.WriteLine("Text grancvela");
-        }
-        return " Text Grancvela";
+        Console.WriteLine(ex);
+        Console.WriteLine(ex.Message);
+        a = 1;
     }
+    finally
+    {
+        if (a == 1)
+        {
+            Console.WriteLine("Pordzeq aranc taraskhal !!!");
+        }
+    }
+
+
+}
+static string FileMethod(string a)
+{
+    string path = @"C:\\Users\\37494\\source\\repos\\Khanut_Iskakan\\Khanut_Iskakan\\bin\\note.dat.txt";
+    string text_2 = a;
+    using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+    {
+        byte[] input = Encoding.Default.GetBytes(text_2);
+        fstream.Write(input, 0, input.Length);
+        fstream.Close();
+    }
+    return "";
 }
